@@ -1,0 +1,25 @@
+BUILD_DIR=build
+TEX2PDF=pdflatex
+TEX2PDF_OPTS=-file-line-error -output-directory $(BUILD_DIR)
+
+.PHONY : all clean
+
+all: $(BUILD_DIR)/git-introductie.pdf
+
+$(BUILD_DIR)/git-introductie.pdf: git-introductie.tex $(BUILD_DIR)
+	$(TEX2PDF) $(TEX2PDF_OPTS) $<
+	$(TEX2PDF) $(TEX2PDF_OPTS) $<
+
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+# Removing the .bbl and .aux files before a run is recommended to avoid
+# spurious error messages that might corrupt the .aux file currently
+# being generated.
+clean:
+	@rm -f $(BUILD_DIR)/*.aux \
+	       $(BUILD_DIR)/*.log \
+	       $(BUILD_DIR)/*.out \
+	       $(BUILD_DIR)/*.snm \
+	       $(BUILD_DIR)/*.toc \
+	       $(BUILD_DIR)/*.nav

@@ -1,0 +1,116 @@
+\documentclass[]{beamer}
+
+\mode<presentation>
+{
+    \usetheme{Berlin}
+    \usecolortheme{dove}
+    \useinnertheme{circles}
+}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage{booktabs} % Pretty rules for tables
+\usepackage{enumerate} % Enumerated lists
+\usepackage{wrapfig} % Wrapping text around images
+\usepackage{caption} % Advanced features for image/table captions
+
+% Configure caption
+\captionsetup{margin=10pt,font=scriptsize,labelfont=bf,labelsep=colon}
+
+% For including images
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{./images/}}
+
+\title[Git]
+{Git -- een introductie}
+
+\author{Serrano Pereira}
+
+\institute
+{
+  \inst{}
+  Computest, Zoetermeer
+}
+
+\date{\today}
+
+\subject{IT}
+
+% Show ToC at beginning of each section
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Inhoud}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\begin{document}
+
+% Title page
+\frame{\titlepage}
+\note{}
+
+% ToC
+\begin{frame}
+\frametitle{Inhoud}
+\tableofcontents
+\end{frame}
+
+\section{Over ``Version Control''}
+
+\subsection{Wat is ``Version Control''?}
+
+\begin{frame}
+    \begin{enumerate}
+    \item {Een systeem om versies van bestanden te registreren}
+    \item {Auteur, datum, beschrijving, versie nummer}
+    \end{enumerate}
+\end{frame}
+
+\subsection{Waarom zou je het moeten gebruiken?}
+
+\begin{frame}
+    \begin{enumerate}
+    \item Versies vergelijken
+    \item Oude versies van bestanden opvragen
+        \begin{itemize}
+        \item Eerdere wijzigingen ongedaan maken
+        \end{itemize}
+    \item {Terugzien wie een bepaalde wijziging heeft gemaakt}
+        \begin{itemize}
+        \item Wanneer
+        \item Waarom
+        \end{itemize}
+    \item Samenwerking
+        \begin{itemize}
+        \item Parallel aan de dezelfde bestanden werken
+        \item Wijzigingen samenvoegen
+        \end{itemize}
+    \end{enumerate}
+\end{frame}
+
+\subsection{Waarvoor kan je het gebruiken?}
+
+\begin{frame}
+    \begin{enumerate}
+    \item Tekst bestanden (bijv. broncode)
+    \item Binaire bestanden (bijv. afbeeldingen)
+    \end{enumerate}
+\end{frame}
+
+\section{Version Control Systemen}
+\section{Git}
+
+\section*{Naslagwerk}
+
+\begin{frame}{Naslagwerk}
+    \begin{itemize}
+    \item Git website: \url{https://git-scm.com/}
+    \item Pro Git book (gratis online boek): \url{https://git-scm.com/book/}
+    \item Hoe schrijf je een goede Git Commit Message: \url{https://chris.beams.io/posts/git-commit/}
+    \item Handige Git tips: \url{http://gitready.com/}
+    \end{itemize}
+\end{frame}
+
+\end{document}
