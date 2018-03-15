@@ -6,6 +6,7 @@
 {
     \usetheme{Berlin}
     \usecolortheme[named=computestgreen]{structure}
+    \useoutertheme{miniframes}
     \useinnertheme{circles}
 }
 
@@ -65,8 +66,8 @@
 
 \begin{frame}
     \begin{enumerate}
-    \item Een systeem om versies van bestanden mee te registreren
-    \item Auteur, datum, beschrijving, versie nummer
+        \item Een systeem om versies van bestanden mee te registreren
+        \item Auteur, datum, beschrijving, versie nummer
     \end{enumerate}
 \end{frame}
 
@@ -77,17 +78,17 @@
     \item Versies vergelijken
     \item Oude versies van bestanden opvragen
         \begin{itemize}
-        \item Eerdere wijzigingen ongedaan maken
+            \item Eerdere wijzigingen ongedaan maken
         \end{itemize}
     \item Terugzien wie een bepaalde wijziging heeft gemaakt
         \begin{itemize}
-        \item Wanneer
-        \item Waarom
+            \item Wanneer
+            \item Waarom
         \end{itemize}
     \item Samenwerking
         \begin{itemize}
-        \item Parallel aan de dezelfde bestanden werken
-        \item Wijzigingen samenvoegen
+            \item Parallel aan de dezelfde bestanden werken
+            \item Wijzigingen samenvoegen
         \end{itemize}
     \end{enumerate}
 \end{frame}
@@ -96,13 +97,143 @@
 
 \begin{frame}
     \begin{enumerate}
-    \item Tekst bestanden (bijv. broncode)
-    \item Binaire bestanden (bijv. afbeeldingen)
+        \item Tekst bestanden (bijv. broncode)
+        \item Binaire bestanden (bijv. afbeeldingen)
     \end{enumerate}
 \end{frame}
 
 \section{Versiebeheersystemen}
+
+\subsection{Lokaal}
+
+\frame[plain]{
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textheight]{local}
+    \end{figure}
+}
+
+\subsection{Gecentraliseerd}
+
+\frame[plain]{
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textheight]{centralized}
+    \end{figure}
+}
+
+\begin{frame}
+    \begin{itemize}
+        \item \texttt{Concurrent Versions System (CVS)} (1986)
+        \item \texttt{Subversion} (2000)
+    \end{itemize}
+\end{frame}
+
+\subsection{Gedistribueerd}
+
+\frame[plain]{
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textheight]{distributed}
+    \end{figure}
+}
+
+\begin{frame}
+    \begin{itemize}
+        \item \texttt{BitKeeper} (2000)
+        \item \texttt{Bazaar} (2005)
+        \item \texttt{Git} (2005)
+        \item \texttt{Mercurial} (2005)
+    \end{itemize}
+\end{frame}
+
 \section{Git}
+
+\subsection{Geschiedenis}
+
+\frame[plain]{
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textheight]{Linus_Torvalds}
+    \end{figure}
+}
+
+\frame[plain]{
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textheight]{Tux}
+    \end{figure}
+}
+
+\frame[plain]{
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textheight]{Git}
+    \end{figure}
+}
+
+\subsection{Waarom Git?}
+
+\begin{frame}
+    \begin{itemize}
+        \item Volledig gedistribueerd
+        \item Goede ondersteuning voor niet-lineaire ontwikkeling
+        \item Snelheid
+        \item Efficiënt met grote projecten
+        \item Gebruikersvriendelijk
+    \end{itemize}
+\end{frame}
+
+\subsection{Hoe werkt het?}
+
+\frame[plain]{
+    \frametitle{Git denkt in momentopnames}
+
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{snapshots}
+    \end{figure}
+}
+
+\frame[plain]{
+    \frametitle{Integriteit}
+
+    \begin{itemize}
+        \item Alle objecten krijgen een controlegetal (checksum)
+        \item SHA-1
+    \end{itemize}
+
+    \vspace{10 mm}
+    \centering
+
+    \texttt{b40508769cb0aac22d9f73c8669c3a13f5e9cf0b}
+}
+
+\frame[plain]{
+    \frametitle{De drie toestanden}
+
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{areas}
+    \end{figure}
+}
+
+\subsection{De commando-regel}
+
+\begin{frame}
+    \begin{itemize}
+        \item De \texttt{git} commando-regel
+        \begin{itemize}
+            \item Geeft toegang to alle commando's
+            \item Vereist basiskennis werken met Terminal
+        \end{itemize}
+        \pause
+        \item Grafische tools
+        \begin{itemize}
+            \item Implementen maar een deel van de functionaliteit
+        \end{itemize}
+    \end{itemize}
+\end{frame}
 
 \section*{Naslagwerk}
 
