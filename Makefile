@@ -6,7 +6,7 @@ TEX2PDF_OPTS=-file-line-error -output-directory $(BUILD_DIR) -shell-escape
 
 all: $(BUILD_DIR)/git-introductie.pdf
 
-$(BUILD_DIR)/git-introductie.pdf: git-introductie.tex $(BUILD_DIR)
+$(BUILD_DIR)/git-introductie.pdf: git-introductie.tex source/* $(BUILD_DIR)
 	$(TEX2PDF) $(TEX2PDF_OPTS) $<
 	$(TEX2PDF) $(TEX2PDF_OPTS) $<
 

@@ -25,7 +25,6 @@
 
 % Configure minted
 \usemintedstyle{monokai}
-\setminted{bgcolor=monokaibg}
 
 % For including images
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
@@ -283,8 +282,6 @@ man git-<commando>
     \end{block}
 \end{frame}
 
-\subsection{Een Git repository verkrijgen}
-
 \begin{frame}
     \frametitle{Een Git repository verkrijgen}
 
@@ -293,6 +290,8 @@ man git-<commando>
         \item Een bestaande repository klonen
     \end{enumerate}
 \end{frame}
+
+\subsection{Een repository initialiseren}
 
 \begin{frame}[fragile]
     \frametitle{Een repository initialiseren}
@@ -307,14 +306,20 @@ git init
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Een repository initialiseren}
+    \frametitle{Bestanden toevoegen}
 
     \texttt{hello.py}
-    \inputminted{python}{source/hello.py}
+    \inputminted[bgcolor=monokaibg]{python}{source/hello.py}
+
+    \vspace{10 mm}
+
+    \begin{block}{Terminal}
+    \verb/python3 hello.py/
+    \end{block}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Een repository initialiseren}
+    \frametitle{Bestanden toevoegen en committen}
 
     \begin{block}{Terminal}
     \verb/git status/
@@ -332,6 +337,92 @@ git init
     \verb/git commit/
     \end{block}
 \end{frame}
+
+\begin{frame}[plain]
+    \frametitle{Hoe ziet een goede commit message eruit?}
+
+    \inputminted[fontsize=\scriptsize]{text}{source/commit-message.txt}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden wijzigen en committen}
+
+    \texttt{hello.py}
+    \inputminted[bgcolor=monokaibg]{python}{source/hello2.py}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden wijzigen en committen}
+
+    \begin{block}{Terminal}
+    \verb/git status/
+    \end{block}
+
+    \pause
+
+    \begin{block}{Terminal}
+
+    \verb/git add -p/
+    \end{block}
+
+    \pause
+
+    \begin{block}{Terminal}
+    \verb/git commit/
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Commit geschiedenis bekijken}
+
+    \begin{block}{Terminal}
+    \verb/git log/
+    \end{block}
+
+    \pause
+
+    \begin{block}{Terminal}
+
+    \verb/git show <commit>/
+    \end{block}
+
+    \pause
+
+    \begin{block}{Terminal}
+
+    \verb/git blame <bestand>/
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Commit ongedaan maken}
+
+    \begin{block}{Terminal}
+    \verb/git revert .../
+    \end{block}
+
+    \pause
+
+    \begin{block}{Terminal}
+    \verb/python3 hello.py/
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Git repository resetten}
+
+    \begin{block}{Terminal}
+    \verb/git reset .../
+    \end{block}
+
+    \pause
+
+    \begin{block}{Terminal}
+    \verb/git log/
+    \end{block}
+\end{frame}
+
+\subsection{Een bestaande repository klonen}
 
 \section*{Naslagwerk}
 
