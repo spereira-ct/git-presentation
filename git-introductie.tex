@@ -199,7 +199,7 @@
     \frametitle{Integriteit}
 
     \begin{itemize}
-        \item Alle objecten krijgen een controlegetal (checksum)
+        \item Alle objecten krijgen een checksum
         \item SHA-1
     \end{itemize}
 
@@ -237,13 +237,13 @@
 
 \subsection{Installeren en configureren}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Installeren}
 
     \centering
 
-    \begin{block}{}
-    \texttt{git}
+    \begin{block}{Terminal}
+    \verb/git --version/
     \end{block}
 
     \vspace{10 mm}
@@ -255,12 +255,24 @@
 \begin{frame}[fragile]
     \frametitle{Configureren voor gebruik}
 
-    \begin{block}{}
+    \begin{block}{Terminal}
 \begin{verbatim}
 git config --global user.name "John Doe"
 git config --global user.email john@example.com
-git config --global core.editor vim
+git config --global core.editor nano
 git config --global color.diff true
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Hulp krijgen}
+
+    \begin{block}{Terminal}
+\begin{verbatim}
+git help <commando>
+git <commando> --help
+man git-<commando>
 \end{verbatim}
     \end{block}
 \end{frame}
