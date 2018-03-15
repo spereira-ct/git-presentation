@@ -1,6 +1,6 @@
 BUILD_DIR=build
 TEX2PDF=pdflatex
-TEX2PDF_OPTS=-file-line-error -output-directory $(BUILD_DIR)
+TEX2PDF_OPTS=-file-line-error -output-directory $(BUILD_DIR) -shell-escape
 
 .PHONY : all clean
 
@@ -17,9 +17,4 @@ $(BUILD_DIR):
 # spurious error messages that might corrupt the .aux file currently
 # being generated.
 clean:
-	@rm -f $(BUILD_DIR)/*.aux \
-	       $(BUILD_DIR)/*.log \
-	       $(BUILD_DIR)/*.out \
-	       $(BUILD_DIR)/*.snm \
-	       $(BUILD_DIR)/*.toc \
-	       $(BUILD_DIR)/*.nav
+	@rm -f $(BUILD_DIR)/*

@@ -1,6 +1,7 @@
 \documentclass[]{beamer}
 
 \definecolor{computestgreen}{HTML}{AFBC20}
+\definecolor{monokaibg}{HTML}{191919}
 
 \mode<presentation>
 {
@@ -17,9 +18,14 @@
 \usepackage{enumerate} % Enumerated lists
 \usepackage{wrapfig} % Wrapping text around images
 \usepackage{caption} % Advanced features for image/table captions
+\usepackage{minted}
 
 % Configure caption
 \captionsetup{margin=10pt,font=scriptsize,labelfont=bf,labelsep=colon}
+
+% Configure minted
+\usemintedstyle{monokai}
+\setminted{bgcolor=monokaibg}
 
 % For including images
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
@@ -275,6 +281,36 @@ git <commando> --help
 man git-<commando>
 \end{verbatim}
     \end{block}
+\end{frame}
+
+\subsection{Een Git repository verkrijgen}
+
+\begin{frame}
+    \frametitle{Een Git repository verkrijgen}
+
+    \begin{enumerate}
+        \item Een repository initialiseren
+        \item Een bestaande repository klonen
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Een repository initialiseren}
+
+    \begin{block}{Terminal}
+\begin{verbatim}
+mkdir hello
+cd hello
+git init
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Een repository initialiseren}
+
+	\texttt{hello.py}
+	\inputminted{python}{source/hello.py}
 \end{frame}
 
 \section*{Naslagwerk}
