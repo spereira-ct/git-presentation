@@ -437,7 +437,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
     \frametitle{Bestanden wijzigen en committen}
 
     \begin{block}{Terminal}
-\begin{Verbatim}[fontsize=\tiny]
+\begin{Verbatim}[fontsize=\scriptsize]
 $ git diff
 diff --git a/hello.py b/hello.py
 index f7cf60e..5d97bdd 100755
@@ -454,7 +454,7 @@ index f7cf60e..5d97bdd 100755
     \frametitle{Bestanden wijzigen en committen}
 
     \begin{block}{Terminal}
-\begin{Verbatim}[fontsize=\tiny]
+\begin{Verbatim}[fontsize=\scriptsize]
 $ git add -p
 diff --git a/hello.py b/hello.py
 index f7cf60e..5d97bdd 100755
@@ -472,7 +472,7 @@ Stage this hunk [y,n,q,a,d,/,e,?]?
     \frametitle{Bestanden wijzigen en committen}
 
     \begin{block}{Terminal}
-\begin{Verbatim}[fontsize=\tiny]
+\begin{Verbatim}[fontsize=\scriptsize]
 $ git status
 On branch master
 Changes to be committed:
@@ -487,7 +487,7 @@ Changes to be committed:
     \frametitle{Bestanden wijzigen en committen}
 
     \begin{block}{Terminal}
-\begin{Verbatim}[fontsize=\tiny]
+\begin{Verbatim}[fontsize=\scriptsize]
 $ git diff --staged
 diff --git a/hello.py b/hello.py
 index f7cf60e..5d97bdd 100755
@@ -567,6 +567,69 @@ index f7cf60e..5d97bdd 100755
 
     \begin{block}{Terminal}
     \verb$git clone git@github.com:libgit2/pygit2.git$
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{block}{Terminal}
+    \frametitle{De remote repository}
+
+\begin{Verbatim}[fontsize=\scriptsize]
+$ git remote -v
+origin  https://github.com/libgit2/pygit2 (fetch)
+origin  https://github.com/libgit2/pygit2 (push)
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{block}{Terminal}
+    \frametitle{Branches}
+
+\begin{Verbatim}[fontsize=\scriptsize]
+$ git branch
+* master
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{block}{Terminal}
+    \frametitle{Branches}
+
+\begin{Verbatim}[fontsize=\scriptsize]
+$ git branch remove_todo
+
+$ git branch
+* master
+  remove_todo
+
+$ git checkout remove_todo
+Switched to branch 'remove_todo'
+
+$ git branch
+  master
+* remove_todo
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{block}{Terminal}
+    \frametitle{Branches}
+
+\begin{Verbatim}[fontsize=\scriptsize]
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+$ git merge remove_todo
+Updating 0f64ac4..685569e
+Fast-forward
+ TODO.txt | 16 ----------------
+ 1 file changed, 16 deletions(-)
+ delete mode 100644 TODO.txt
+\end{Verbatim}
     \end{block}
 \end{frame}
 
