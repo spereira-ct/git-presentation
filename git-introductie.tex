@@ -418,15 +418,51 @@ git commit
 
 \subsection{Een bestaande repository klonen}
 
+\begin{frame}[fragile]
+    \frametitle{Git clone}
+
+    \begin{block}{Terminal}
+    \verb$git clone https://github.com/libgit2/pygit2$
+    \end{block}
+
+    \pause
+
+    \begin{block}{Terminal}
+    \verb$git clone git@github.com:libgit2/pygit2.git$
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Git branch}
+
+    % TODO
+\end{frame}
+
 \begin{frame}
-    \frametitle{GitHub account maken}
+    \frametitle{Een repository forken op GitHub}
 
     \begin{enumerate}
+        \item Maak een GitHub account aan
         \item Genereer een SSH key
         \item Voeg de SSH key toe aan je ssh-agent
-        \item Maak een GitHub account aan
         \item Voeg de SSH key toe aan je GitHub account
         \item Fork deze repository op GitHub: \url{https://github.com/spereira-ct/git-intro}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{De repository klonen}
+
+    \begin{enumerate}
+        \item Ga naar \url{https://github.com/spereira-ct/git-intro}
+        \item Kloon de repository \textbf{met SSH}
+        \item Maak lokaal een nieuwe branch aan in de repository
+        \item Switch naar de nieuwe branch
+        \item Voeg je naam toe onder ``Contributors'' in de \texttt{README}
+        \item Commit je wijzigingen
+        \item Merge je branch met de \textbf{master} branch
+        \item Push de \textbf{master} branch naar \textbf{origin master}
+        \item Ga naar \url{https://github.com/spereira-ct/git-intro} en check of je naam erbij staat
     \end{enumerate}
 \end{frame}
 
