@@ -19,6 +19,7 @@
 \usepackage{wrapfig} % Wrapping text around images
 \usepackage{caption} % Advanced features for image/table captions
 \usepackage{minted}
+\usepackage{fancyvrb}
 
 % Configure caption
 \captionsetup{margin=10pt,font=scriptsize,labelfont=bf,labelsep=colon}
@@ -48,7 +49,7 @@
 % Show ToC at beginning of each section
 \AtBeginSubsection[]
 {
-  \begin{frame}<beamer>{Inhoud}
+  \begin{frame}<beamer>{}
     \tableofcontents[currentsection,currentsubsection]
   \end{frame}
 }
@@ -61,7 +62,6 @@
 
 % ToC
 \begin{frame}
-\frametitle{Inhoud}
 \tableofcontents
 \end{frame}
 
@@ -305,6 +305,27 @@ git init
     \end{block}
 \end{frame}
 
+\frame[plain]{
+    \frametitle{Wijzigingen vastleggen}
+
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{lifecycle}
+    \end{figure}
+}
+
+\begin{frame}[fragile]
+    \frametitle{De status controleren}
+
+    \begin{block}{Terminal}
+\begin{verbatim}
+$ git status
+On branch master
+nothing to commit, working directory clean
+\end{verbatim}
+    \end{block}
+\end{frame}
+
 \begin{frame}[fragile]
     \frametitle{Bestanden toevoegen}
 
@@ -319,19 +340,50 @@ git init
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Bestanden toevoegen en committen}
+    \frametitle{De status controleren}
 
     \begin{block}{Terminal}
-    \verb/git status/
-    \end{block}
+\begin{Verbatim}[fontsize=\tiny]
+$ git status
+On branch master
 
-    \pause
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        hello.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden toevoegen en committen}
 
     \begin{block}{Terminal}
     \verb/git add hello.py/
     \end{block}
+\end{frame}
 
-    \pause
+\begin{frame}[fragile]
+    \frametitle{De status controleren}
+
+    \begin{block}{Terminal}
+\begin{Verbatim}[fontsize=\scriptsize]
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+      new file:   hello.py
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden toevoegen en committen}
 
     \begin{block}{Terminal}
     \verb/git commit/
@@ -345,6 +397,18 @@ git init
 \end{frame}
 
 \begin{frame}[fragile]
+    \frametitle{De status controleren}
+
+    \begin{block}{Terminal}
+\begin{Verbatim}[fontsize=\scriptsize]
+$ git status
+On branch master
+nothing to commit, working directory clean
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
     \frametitle{Bestanden wijzigen en committen}
 
     \texttt{hello.py}
@@ -355,14 +419,92 @@ git init
     \frametitle{Bestanden wijzigen en committen}
 
     \begin{block}{Terminal}
-\begin{verbatim}
-git status
-git diff
-git add -p
-git status
-git diff --staged
-git commit
-\end{verbatim}
+\begin{Verbatim}[fontsize=\tiny]
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   hello.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden wijzigen en committen}
+
+    \begin{block}{Terminal}
+\begin{Verbatim}[fontsize=\tiny]
+$ git diff
+diff --git a/hello.py b/hello.py
+index f7cf60e..5d97bdd 100755
+--- a/hello.py
++++ b/hello.py
+@@ -1 +1 @@
+-print("Hello, world!")
++print("Hello, Git!")
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden wijzigen en committen}
+
+    \begin{block}{Terminal}
+\begin{Verbatim}[fontsize=\tiny]
+$ git add -p
+diff --git a/hello.py b/hello.py
+index f7cf60e..5d97bdd 100755
+--- a/hello.py
++++ b/hello.py
+@@ -1 +1 @@
+-print("Hello, world!")
++print("Hello, Git!")
+Stage this hunk [y,n,q,a,d,/,e,?]?
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden wijzigen en committen}
+
+    \begin{block}{Terminal}
+\begin{Verbatim}[fontsize=\tiny]
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   hello.py
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden wijzigen en committen}
+
+    \begin{block}{Terminal}
+\begin{Verbatim}[fontsize=\tiny]
+$ git diff --staged
+diff --git a/hello.py b/hello.py
+index f7cf60e..5d97bdd 100755
+--- a/hello.py
++++ b/hello.py
+@@ -1 +1 @@
+-print("Hello, world!")
++print("Hello, Git!")
+\end{Verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bestanden wijzigen en committen}
+
+    \begin{block}{Terminal}
+    \verb/git commit/
     \end{block}
 \end{frame}
 
@@ -376,14 +518,12 @@ git commit
     \pause
 
     \begin{block}{Terminal}
-
     \verb/git show <commit>/
     \end{block}
 
     \pause
 
     \begin{block}{Terminal}
-
     \verb/git blame <bestand>/
     \end{block}
 \end{frame}
@@ -419,8 +559,6 @@ git commit
 \subsection{Een bestaande repository klonen}
 
 \begin{frame}[fragile]
-    \frametitle{Git clone}
-
     \begin{block}{Terminal}
     \verb$git clone https://github.com/libgit2/pygit2$
     \end{block}
@@ -430,12 +568,6 @@ git commit
     \begin{block}{Terminal}
     \verb$git clone git@github.com:libgit2/pygit2.git$
     \end{block}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Git branch}
-
-    % TODO
 \end{frame}
 
 \begin{frame}
