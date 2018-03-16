@@ -13,8 +13,5 @@ $(BUILD_DIR)/git-introductie.pdf: git-introductie.tex source/* $(BUILD_DIR)
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
-# Removing the .bbl and .aux files before a run is recommended to avoid
-# spurious error messages that might corrupt the .aux file currently
-# being generated.
 clean:
 	@rm -f $(BUILD_DIR)/*
